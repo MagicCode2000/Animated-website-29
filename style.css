@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.Home{
+    min-height: 100vh;
+    background-color: #4e137f;
+    position: relative;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 0 90px;
+    overflow: hidden;
+}
+.Home img{
+    position: absolute;
+    width: 74%;
+    right: 0;
+    pointer-events: none;
+}
+#shape{
+    width: 100%;
+    height: 100%;
+}
+.camp{
+    bottom: 0;
+}
+.stars,
+.mountains,
+.trees{
+    top: 0;
+    transform: translateY(100%);
+    animation: to-top 2s ease forwards;
+}
+.mountains{
+    animation-delay: .5s;
+}
+.stars{
+    animation-delay: 1s;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 90px;
+    font-size: 22px;
+    opacity: 0;
+    animation: to-bottom 1s ease forwards;
+}
+header nav a{
+    color: white;
+    font-size: 26px;
+    margin-left: 80px;
+    transition: .3s;
+}
+header nav .active,
+header nav a:hover{
+    color: #d961e6;
+}
+.text-box{
+    width: 50%;
+    z-index: 99;
+}
+.text-box h1{
+    font-size: 85px;
+    color: #d961e6;
+    animation: to-right 1s ease forwards 1.3s;
+}
+.text-box h1:nth-child(2){
+    color: black;
+    font-size: 65px;
+    animation-delay: 1.5s;
+}
+.text-box p{
+    margin: 35px 0;
+    font-size: 24px;
+    width: 83%;
+    color: #989898;
+    animation: to-right 1s ease forwards 1.7s;
+}
+.btn-box{
+    display: flex;
+    gap: 17px;
+}
+.btn{
+    padding: 13px 35px;
+    font-size: 24px;
+    border: 2px solid #d961e6;
+    background: transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .3s;
+    animation: to-right 1s ease forwards 1.9s;
+}
+.btn:hover,
+.btn:nth-child(2){
+    color: white;
+    background-color: #d961e6;
+    box-shadow: 0 0 15px #d961e6;
+}
+.btn:nth-child(2):hover{
+    color: black;
+    background: transparent;
+    box-shadow: none;
+}
+.text-box *{
+    opacity: 0;
+}
+.text-box span{
+    opacity: 1;
+}
+/* keyframes */
+@keyframes to-bottom {
+    0%{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes to-right {
+    0%{
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes to-top {
+    0%{
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
